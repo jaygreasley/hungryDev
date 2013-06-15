@@ -9,8 +9,12 @@
 <% @resorts.each do |resort| %>
   <tr>
     <td><%= resort.name %></td>
-    <td><%= resort.country_id %></td>
+    <td><%= resort.country.name %></td>
+    <td><%= link_to 'Show',  resort_path(resort) %></td>
+    <td><%= link_to 'Edit', edit_resort_path(resort) %></td>
+    <td><%= link_to 'Destroy', resort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
+<%= link_to 'New Resort', new_resort_path %>

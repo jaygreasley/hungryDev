@@ -1,5 +1,5 @@
 class ResortsController < ApplicationController
-  # GET /resorts
+   # GET /resorts
   # GET /resorts.json
   def index
     @resorts = Resort.all
@@ -25,6 +25,7 @@ class ResortsController < ApplicationController
   # GET /resorts/new.json
   def new
     @resort = Resort.new
+    @countries = Country.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,9 @@ class ResortsController < ApplicationController
   # GET /resorts/1/edit
   def edit
     @resort = Resort.find(params[:id])
+    @countries = Country.all
+    
+    
   end
 
   # POST /resorts

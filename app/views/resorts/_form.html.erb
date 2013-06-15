@@ -1,4 +1,4 @@
-<%= form_for(@resort) do |f| %>
+<%= form_for @resort do |f| %>
   <% if @resort.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@resort.errors.count, "error") %> prohibited this resort from being saved:</h2>
@@ -17,7 +17,8 @@
   </div>
   <div class="field">
     <%= f.label :country_id %><br />
-    <%= f.number_field :country_id %>
+    
+    <%= select(:resort, :country_id, @countries.collect {|p| [ p.name, p.id ] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>
