@@ -14,6 +14,7 @@ class CountriesController < ApplicationController
 
   def show
     @country = Country.find(params[:id])
+    @resorts = @country.resort
 
     respond_to do |format|
       format.html # show.html.erb

@@ -14,6 +14,19 @@
   <b>Description:</b>
   <%= @country.description %>
 </p>
+<h2>Resorts:</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    
+  </tr>
+
+<% @resorts.each do |resort| %>
+  <tr>
+    <td><%= resort.name %></td>
+   </tr>
+<% end %>
+</table>
 
 
 <%= link_to 'Edit', edit_country_path(@country) %> |

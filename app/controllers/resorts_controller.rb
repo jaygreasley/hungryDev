@@ -2,7 +2,12 @@ class ResortsController < ApplicationController
    # GET /resorts
   # GET /resorts.json
   def index
-    @resorts = Resort.all
+    
+    if params[:country_id]
+      @resorts = Resort.where("country_id = ?", params[:country_id])
+    else
+      @resorts = Resort.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
