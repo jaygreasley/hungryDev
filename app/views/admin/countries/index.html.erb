@@ -1,11 +1,13 @@
 <h1>Listing countries</h1>
 
-<div style="width: 70%; float: left">
 <table>
   <tr>
     <th>Name</th>
     <th>Isocode</th>
     <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @countries.each do |country| %>
@@ -13,23 +15,13 @@
     <td><%= country.name %></td>
     <td><%= country.isocode %></td>
     <td><%= country.description %></td>
+    <td><%= link_to 'Show', country %></td>
+    <td><%= link_to 'Edit', edit_country_path(country) %></td>
+    <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-</div>
 
-<div style="width: 25%; float: right">
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-
-<% @resorts.each do |resort| %>
-  <tr>
-    <td><%= resort.name %></td>
-  </tr>
-<% end %>
-</table>
-</div>  
 <br />
 
+<%= link_to 'New Country', new_country_path %>

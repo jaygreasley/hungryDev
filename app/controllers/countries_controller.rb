@@ -3,7 +3,9 @@ class CountriesController < ApplicationController
   # GET /countries.json
   def index
     @countries = Country.all
+    @resorts = Resort.all
 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @countries }

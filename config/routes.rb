@@ -1,6 +1,13 @@
 Project::Application.routes.draw do
+  resources :resorts
+
+
+
   resources :countries
 
+  namespace :admin do
+    resources :countries, :resorts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

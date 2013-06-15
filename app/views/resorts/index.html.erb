@@ -1,0 +1,16 @@
+<h1>Listing resorts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+  </tr>
+
+<% @resorts.each do |resort| %>
+  <tr>
+    <td><%= resort.name %></td>
+    <td><%= resort.country_id %></td>
+  </tr>
+<% end %>
+</table>
+
